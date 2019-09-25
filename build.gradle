@@ -9,6 +9,7 @@ buildscript {
         springSecurityOAuthAutoconfigVersion = "2.1.0.RELEASE"
         junitVersion = "4.12"
         mysqlVersion = "5.1.40"
+        springCloudServicesClientLibrariesVersion = "2.0.2.RELEASE"
     }
 
     repositories {
