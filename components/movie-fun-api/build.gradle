@@ -1,11 +1,18 @@
 apply from: "../../java.gradle"
+apply plugin: 'io.spring.dependency-management'
+
+dependencyManagement {
+    imports {
+        mavenBom "io.pivotal.spring.cloud:spring-cloud-services-dependencies:$springCloudServicesClientLibrariesVersion"
+    }
+}
 
 dependencies {
     compile project(":components:blobstore")
-
     compile "org.springframework:spring-web:$springVersion"
     compile "org.springframework:spring-context:$springVersion"
-
     compile "javax.servlet:javax.servlet-api:3.1.0"
     compile "org.slf4j:slf4j-api:$slf4jVersion"
+
+    compile "io.pivotal.spring.cloud:spring-cloud-services-starter-config-client"
 }
